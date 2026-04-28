@@ -23,3 +23,17 @@ def calcula_pontos_soma(dados):
     for dado in dados:
         total += dado
     return total
+def calcula_pontos_sequencia_baixa(dados):
+    sequencias = [
+        [1, 2, 3, 4],
+        [2, 3, 4, 5],
+        [3, 4, 5, 6]
+    ]
+    for sequencia in sequencias:
+        encontrou = True
+        for numero in sequencia:
+            if numero not in dados:
+                encontrou = False
+        if encontrou:
+            return 15
+    return 0
