@@ -50,3 +50,23 @@ def calcula_pontos_sequencia_alta(dados):
         if encontrou:
             return 30
     return 0
+def calcula_pontos_full_house(dados):
+    contagem = {}
+    for dado in dados:
+        if dado in contagem:
+            contagem[dado] += 1
+        else:
+            contagem[dado] = 1
+    trinca = False
+    par = False
+    for valor in contagem.values():
+        if valor == 3:
+            trinca = True
+        elif valor == 2:
+            par = True
+    if trinca and par:
+        total = 0
+        for dado in dados:
+            total += dado
+        return total
+    return 0
