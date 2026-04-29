@@ -70,3 +70,15 @@ def calcula_pontos_full_house(dados):
             total += dado
         return total
     return 0
+def calcula_pontos_quadra(dados):
+    for i in range(1, 7):
+        total = 0
+        for j in range(len(dados)):
+            if dados[j] == i:
+                total += 1
+        if total >= 4:
+            soma = 0
+            for k in range(len(dados)):
+                soma += dados[k]
+            return soma
+    return 0
